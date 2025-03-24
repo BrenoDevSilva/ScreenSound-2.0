@@ -5,6 +5,7 @@
     public int Duracao { get; set; }
     public bool Disponivel { get; set; }
 
+
     public void ExibirFichaTecnica()
     {
         Console.WriteLine($"Nome: {Nome}");
