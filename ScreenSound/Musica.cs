@@ -1,16 +1,16 @@
 ﻿class Musica
 {
-    public string nome;
-    public string artista;
-    public int duracao;
-    public bool disponivel;
+    public string Nome { get; set; }
+    public string Artista { get; set; }
+    public int Duracao { get; set; }
+    public bool Disponivel { get; set; }
 
     public void ExibirFichaTecnica()
     {
-        Console.WriteLine($"Nome: {nome}");
-        Console.WriteLine($"Arista: {artista}");
-        Console.WriteLine($"Duração: {duracao}");
-        if (disponivel is true)
+        Console.WriteLine($"Nome: {Nome}");
+        Console.WriteLine($"Arista: {Artista}");
+        Console.WriteLine($"Duração: {Duracao}");
+        if (Disponivel is true)
         {
             Console.WriteLine("Música dísponivel no Plano.");
         }
@@ -18,11 +18,5 @@
         {
             Console.WriteLine("Assine o Plano+ para liberar a música.");
         }
-    }
-
-    public void ExibirNArtista()
-    {
-        Console.WriteLine($"Nome: {nome}");
-        Console.WriteLine($"Artista: {artista}");
     }
 }
