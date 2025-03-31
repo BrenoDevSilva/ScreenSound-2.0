@@ -1,25 +1,42 @@
-﻿Album albumDoMatue = new Album();
-albumDoMatue.Nome = "Máquina do Tempo";
+﻿//chamando e criando a Classe Banda, e atribuindo o valor "Matue"
+Banda matue = new Banda("Matue");
 
-Musica musica1 = new Musica();
-musica1.Nome = "Lágrimas de Diamante";
-musica1.Duracao = 224;
+//chamando e criando a Classe Album, e atribuindo o valor "Máquina do Tempo"
+Album albumDoMatue = new Album("Máquina do Tempo");
 
-Musica musica2 = new Musica();
-musica2.Nome = "O Vento";
-musica2.Duracao = 240;
+//adicionando a Classe Banda a Classe album
+matue.AdicionarAlbum(albumDoMatue);
 
-Musica musica3 = new Musica();
-musica3.Nome = "Teu Amor";
-musica3.Duracao = 222;
+//chamando a Classe Musica e criando uma musica, definindo ascaracterísticas da musica pelo Construtor da Classe Musica
+Musica musica1 = new Musica(matue, "Lágrimas de Diamante")
+{
+    Duracao = 224,
+    Disponivel = true,
+};
 
-Musica musica4 = new Musica();
-musica4.Nome = "Meu Mundo";
-musica4.Duracao = 219;
+Musica musica2 = new Musica(matue, "O Vento")
+{
+    Duracao = 240,
+    Disponivel = true,
+};
 
-Musica musica5 = new Musica();
-musica5.Nome = "S.O.S";
-musica5.Duracao = 200;
+Musica musica3 = new Musica(matue, "Teu Amor")
+{
+    Duracao = 222,
+    Disponivel = false,
+};
+
+Musica musica4 = new Musica(matue, "Meu Mundo")
+{
+    Duracao = 219,
+    Disponivel = false,
+};
+
+Musica musica5 = new Musica(matue, "S.O.S")
+{
+    Duracao = 200,
+    Disponivel = true,
+};
 
 albumDoMatue.AdicionarMusica(musica1);
 albumDoMatue.AdicionarMusica(musica2);
@@ -27,6 +44,11 @@ albumDoMatue.AdicionarMusica(musica3);
 albumDoMatue.AdicionarMusica(musica4);
 albumDoMatue.AdicionarMusica(musica5);
 
+//chamando todos os meios de exibição
+musica1.ExibirFichaTecnica();
+musica2.ExibirFichaTecnica();
+musica3.ExibirFichaTecnica();
+musica4.ExibirFichaTecnica();
+musica5.ExibirFichaTecnica();
 albumDoMatue.ExibirMusicasDoAlbum();
-
-//opa
+matue.ExibirDiscografia();
